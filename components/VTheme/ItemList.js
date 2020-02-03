@@ -24,7 +24,7 @@ export const ItemListing = styled.li`
   font-size: 1rem;
   opacity: 1;
   color: initial;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 `
 export const ItemDescription = styled.div`
   letter-spacing: -0.02rem;
@@ -74,8 +74,10 @@ export const ItemStatus = ({ status }) =>
   </ItemListing>
 
 const EquipmentListItem = styled.li`
+
+  font-weight: 500;
 margin: 0.5rem 0 1.5rem 0;
-font-size: 1.1rem;
+font-size: 1rem;
 `
 
 export const EquipmentList = ({ equipment }) =>
@@ -84,16 +86,10 @@ export const EquipmentList = ({ equipment }) =>
       <div>
         <Divider />
 
-        <h5><strong>
-          <FormattedMessage
-            id='itemlist.equipment'
-            defaultMessage='Equipment needed:'
-            description='Equipment label for acts and ops'
-          /></strong>
-        </h5>
-        <ul>
-          {equipment.map((item, index) => <EquipmentListItem key={index}>{item}</EquipmentListItem>)}
-        </ul>
+    
+        <p>
+          {equipment.map((item, index) => <div><EquipmentListItem key={index}>{item}</EquipmentListItem><Divider/></div>)}
+        </p>
       </div>)
     : ''
 
@@ -150,6 +146,7 @@ export const ItemVolunteers = ({ volunteers }) => {
 
   if (volunteers >= 1) {
     return (
+      <>
       <ItemListing>
         🙋&nbsp;
         <strong>
@@ -160,11 +157,16 @@ export const ItemVolunteers = ({ volunteers }) => {
           />
         </strong>
         &nbsp;&nbsp;&nbsp;{volunteers}
+
       </ItemListing>
+              <Divider/>
+              </>
+
     )
   }
 
   return (
+    <>
     <ItemListing>
         🙋&nbsp;
       <strong>
@@ -175,7 +177,10 @@ export const ItemVolunteers = ({ volunteers }) => {
         />
       </strong>
       {Math.round(1 / volunteers)}
+
     </ItemListing>
+          <Divider/>
+          </>
   )
 }
 
@@ -183,7 +188,7 @@ export const ItemSpace = ({ space }) =>
   space
     ? (
       <ItemListing>
-        🐘&nbsp;
+        🏫&nbsp;
         <strong>
           <FormattedMessage
             id='act.detail.space'
