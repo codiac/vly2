@@ -64,3 +64,21 @@ const actEditTab =
       </VTabs>
     </>
   )
+
+
+ActTabs.propTypes = {
+  act: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
+    imgUrl: PropTypes.any,
+    duration: PropTypes.string,
+    location: PropTypes.string,
+    _id: PropTypes.string
+  }),
+  canManage: PropTypes.bool.isRequired,
+  onChange: PropTypes.func,
+  params: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  })
+}
+export default ActTabs
