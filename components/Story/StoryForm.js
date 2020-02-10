@@ -41,3 +41,5 @@ export const StoryForm = ({ story, onSubmit }) => {
       </FormGrid>
     </Form>)
 }
+
+export default StoryForm

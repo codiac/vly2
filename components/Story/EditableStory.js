@@ -9,7 +9,6 @@ export const EditableStory = ({ story }) => {
   const [storyview, setStoryview] = useState(story)
 
   const handleSave = (story) => {
-    // should write to database
     setStoryview(story)
     setEditing(false)
   }
