@@ -3,11 +3,11 @@ import test from 'ava'
 import { mountWithIntl, shallowWithIntl } from '../../../lib/react-intl-test-helper'
 import StoryForm from '../../../components/Story/StoryForm'
 import sinon from 'sinon'
-// Initial stories
+
 const story = {
-  _id: '5cc903e5f94141437622cea7',
-  name: 'Growing in the garden',
-  description: 'Project to grow something in the garden'
+  _id: '5cc903e5f94141437622cea8',
+  name: 'Story of the sun',
+  description: 'This is an update about sun'
 }
 
 const orginalWarn = console.warn
@@ -36,7 +36,7 @@ test('shallow the detail with story', t => {
 test('render the detail with story', t => {
   const submitStory = sinon.spy()
 
-  const me = { _id: '5ccbffff958ff4833ed2188d' }
+  const me = { _id: '5ccbffff958ff4833ed2188e' }
   const wrapper = mountWithIntl(
     <StoryForm
       story={story}
