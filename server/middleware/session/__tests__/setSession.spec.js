@@ -55,6 +55,7 @@ test('Check session set when user logged in', async t => {
   await setSession(req, null, next)
   t.true(req.session.isAuthenticated)
   t.is(req.session.user.email, jwtData.idTokenPayload.email)
+  t.is(req.session.me.email, jwtData.idTokenPayload.email)
   t.is(req.session.me.nickname, jwtData.idTokenPayload.nickname)
   t.truthy(next.calledOnce)
 })
